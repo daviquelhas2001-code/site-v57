@@ -720,7 +720,12 @@ button { cursor:pointer; }
   resize:vertical;
 }
 
-.form-note {
+.form-note {.honeypot {
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
   grid-column:1/-1;
   color:#8792a0;
   font-size:11px;
@@ -1222,46 +1227,105 @@ button { cursor:pointer; }
     </div>
 
     <!-- FORMULÁRIO CONFIGURADO PARA O NETLIFY FORMS -->
-    <form class="contact-form reveal" id="contactForm" name="contato" method="POST" data-netlify="true">
-      <div class="field">
-        <label for="name">SEU NOME</label>
-        <input id="name" name="name" required maxlength="100"
-          placeholder="Como podemos chamar você?">
-      </div>
+  <!-- FORMULÁRIO DE CONTATO V57 — NETLIFY FORMS -->
+<form
+  class="contact-form reveal"
+  id="contactForm"
+  name="contato"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
 
-      <div class="field">
-        <label for="company">EMPRESA</label>
-        <input id="company" name="company" maxlength="120"
-          placeholder="Nome da empresa">
-      </div>
+  <!-- Identificação do formulário para o Netlify -->
+  <input type="hidden" name="form-name" value="contato">
 
-      <div class="field">
-        <label for="email">SEU E-MAIL</label>
-        <input id="email" name="email" type="email" required
-          placeholder="voce@empresa.com">
-      </div>
+  <!-- Proteção contra envios automáticos -->
+  <div class="honeypot" aria-hidden="true">
+    <label>
+      Não preencha este campo:
+      <input
+        type="text"
+        name="bot-field"
+        tabindex="-1"
+        autocomplete="off"
+      >
+    </label>
+  </div>
 
-      <div class="field">
-        <label for="phone">TELEFONE</label>
-        <input id="phone" name="phone" type="tel"
-          placeholder="(00) 00000-0000">
-      </div>
+  <div class="field">
+    <label for="name">SEU NOME</label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      required
+      maxlength="100"
+      autocomplete="name"
+      placeholder="Como podemos chamar você?"
+    >
+  </div>
 
-      <div class="field full">
-        <label for="subject">COMO PODEMOS AJUDAR?</label>
-        <textarea id="subject" name="subject" required
-          maxlength="3000"
-          placeholder="Conte um pouco sobre seu desafio ou objetivo..."></textarea>
-      </div>
+  <div class="field">
+    <label for="company">EMPRESA</label>
+    <input
+      id="company"
+      name="company"
+      type="text"
+      maxlength="120"
+      autocomplete="organization"
+      placeholder="Nome da empresa"
+    >
+  </div>
 
-      <p class="form-note">
-        Preencha os campos acima e clique em enviar para nos contactar.
-      </p>
+  <div class="field">
+    <label for="email">SEU E-MAIL</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      required
+      maxlength="150"
+      autocomplete="email"
+      placeholder="voce@empresa.com"
+    >
+  </div>
 
-      <div class="field full">
-        <button class="btn" type="submit">Enviar mensagem ↗</button>
-      </div>
-    </form>
+  <div class="field">
+    <label for="phone">TELEFONE</label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      maxlength="25"
+      autocomplete="tel"
+      placeholder="(00) 00000-0000"
+    >
+  </div>
+
+  <div class="field full">
+    <label for="subject">COMO PODEMOS AJUDAR?</label>
+    <textarea
+      id="subject"
+      name="subject"
+      required
+      maxlength="3000"
+      placeholder="Conte um pouco sobre seu desafio ou objetivo..."
+    ></textarea>
+  </div>
+
+  <p class="form-note">
+    Suas informações serão utilizadas para que a equipe da V57
+    possa entrar em contato com você.
+  </p>
+
+  <div class="field full">
+    <button class="btn" type="submit">
+      Enviar mensagem ↗
+    </button>
+  </div>
+
+</form>
   </div>
 </section>
 

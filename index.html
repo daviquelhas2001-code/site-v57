@@ -1394,12 +1394,6 @@ document.getElementById("contactForm").addEventListener("submit", event => {
 
   const form = event.currentTarget;
   if (!form.reportValidity()) return;
-
-  if (V57.email === "SEUEMAIL@EXEMPLO.COM") {
-    alert("O formulário está funcionando, mas precisamos configurar o e-mail comercial da V57 no código.");
-    return;
-  }
-
   const data = new FormData(form);
 
   const name = data.get("name");

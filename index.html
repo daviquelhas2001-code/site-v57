@@ -1,0 +1,1452 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101a29">
+<meta name="description" content="V57 Consultoria e Gestão Empresarial. Diagnóstico, estratégia, gestão de projetos e desenvolvimento empresarial.">
+<meta property="og:title" content="V57 | Estratégia que transforma">
+<meta property="og:description" content="Transformamos desafios empresariais em projetos, soluções e oportunidades de evolução.">
+<title>V57 — Consultoria e Gestão Empresarial</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #101a29;
+  --navy2: #172438;
+  --navy3: #21334a;
+  --gold: #c6a66a;
+  --gold-light: #dfc99c;
+  --paper: #f5f4f0;
+  --white: #ffffff;
+  --ink: #172333;
+  --muted: #8792a1;
+  --line: rgba(255,255,255,.12);
+  --shadow: 0 24px 70px rgba(0,0,0,.13);
+  --container: 1180px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; scroll-padding-top:95px; }
+
+body {
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+body, button, input, textarea { font-family:'DM Sans',sans-serif; }
+
+button, a { -webkit-tap-highlight-color:transparent; }
+
+a { color:inherit; }
+
+button { cursor:pointer; }
+
+::selection { background:var(--gold); color:var(--navy); }
+
+.container {
+  width:min(var(--container),88%);
+  margin:auto;
+}
+
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.eyebrow:before {
+  content:"";
+  display:block;
+  width:27px;
+  height:1px;
+  background:currentColor;
+}
+
+.section-heading {
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(32px,4vw,49px);
+  line-height:1.18;
+  letter-spacing:-1.7px;
+  font-weight:700;
+  margin:18px 0;
+}
+
+.section-description {
+  max-width:650px;
+  color:#758091;
+  font-size:15px;
+}
+
+.btn {
+  min-height:53px;
+  padding:0 24px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  border:1px solid transparent;
+  background:var(--gold);
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:.5px;
+  transition:.25s ease;
+}
+
+.btn:hover {
+  background:var(--gold-light);
+  transform:translateY(-3px);
+}
+
+.btn-outline {
+  background:transparent;
+  border-color:rgba(255,255,255,.35);
+  color:white;
+}
+
+.btn-outline:hover {
+  border-color:var(--gold);
+  color:var(--gold);
+  background:transparent;
+}
+
+.arrow { font-size:18px; }
+
+/* HEADER */
+
+.header {
+  position:fixed;
+  z-index:1000;
+  top:0;
+  left:0;
+  width:100%;
+  height:88px;
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid transparent;
+  transition:.3s;
+}
+
+.header.scrolled {
+  background:rgba(16,26,41,.97);
+  backdrop-filter:blur(15px);
+  height:72px;
+  border-color:var(--line);
+}
+
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand {
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  line-height:1;
+}
+
+.brand-name {
+  color:var(--gold);
+  font-family:'Manrope',sans-serif;
+  font-size:33px;
+  font-weight:800;
+  letter-spacing:5px;
+}
+
+.brand-caption {
+  color:#c0c5cc;
+  font-size:8px;
+  letter-spacing:2.2px;
+  margin-top:7px;
+  text-transform:uppercase;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
+
+.nav-links a {
+  color:#e1e5eb;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  transition:.2s;
+}
+
+.nav-links a:hover { color:var(--gold); }
+
+.nav-links .nav-contact {
+  padding:12px 19px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+}
+
+.menu-toggle {
+  display:none;
+  width:43px;
+  height:43px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:white;
+  font-size:23px;
+}
+
+/* HERO */
+
+.hero {
+  min-height:760px;
+  background:var(--navy);
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+}
+
+.hero:before {
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+  border:1px solid rgba(198,166,106,.12);
+  border-radius:50%;
+  right:-170px;
+  top:100px;
+}
+
+.hero:after {
+  content:"";
+  position:absolute;
+  width:480px;
+  height:480px;
+  border:1px solid rgba(198,166,106,.12);
+  border-radius:50%;
+  right:-60px;
+  top:210px;
+}
+
+.hero-grid {
+  position:absolute;
+  inset:0;
+  opacity:.13;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:75px 75px;
+  mask-image:linear-gradient(to right,transparent,black);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding-top:110px;
+  max-width:790px;
+}
+
+.hero .eyebrow { color:var(--gold-light); }
+
+.hero h1 {
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(46px,7vw,86px);
+  letter-spacing:-4px;
+  line-height:1.08;
+  font-weight:700;
+  margin:29px 0;
+}
+
+.hero h1 span { color:var(--gold); }
+
+.hero-text {
+  color:#b6c0cc;
+  max-width:610px;
+  font-size:16px;
+  line-height:1.9;
+}
+
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:38px;
+}
+
+.hero-note {
+  margin-top:70px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+  color:#8492a2;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+/* INTRO */
+
+.intro {
+  padding:115px 0;
+  background:var(--paper);
+}
+
+.intro-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:center;
+}
+
+.intro-copy p {
+  color:#748092;
+  font-size:15px;
+  margin-top:18px;
+}
+
+.intro-panel {
+  background:var(--navy);
+  color:white;
+  padding:48px;
+  position:relative;
+  overflow:hidden;
+}
+
+.intro-panel:after {
+  content:"V57";
+  position:absolute;
+  right:-5px;
+  bottom:-45px;
+  color:rgba(255,255,255,.035);
+  font-family:'Manrope',sans-serif;
+  font-size:160px;
+  font-weight:800;
+}
+
+.intro-panel h3 {
+  font-family:'Manrope',sans-serif;
+  font-size:27px;
+  line-height:1.35;
+  margin-bottom:20px;
+}
+
+.intro-panel p {
+  color:#aeb9c6;
+  font-size:14px;
+  position:relative;
+  z-index:1;
+}
+
+.panel-line {
+  width:55px;
+  height:3px;
+  background:var(--gold);
+  margin-bottom:25px;
+}
+
+/* PRINCIPLES */
+
+.principles {
+  padding:75px 0;
+  background:#ebe9e3;
+}
+
+.principle-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.principle {
+  border-left:2px solid var(--gold);
+  padding-left:22px;
+}
+
+.principle h3 {
+  font-family:'Manrope',sans-serif;
+  font-size:19px;
+  margin-bottom:8px;
+}
+
+.principle p {
+  font-size:13px;
+  color:#778292;
+}
+
+/* SERVICES */
+
+.services {
+  padding:115px 0;
+  background:white;
+}
+
+.services-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+}
+
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:55px;
+}
+
+.service-card {
+  min-height:265px;
+  padding:31px;
+  background:#f6f6f3;
+  border:1px solid #e9e8e2;
+  transition:.3s;
+  position:relative;
+}
+
+.service-card:hover {
+  background:var(--navy);
+  border-color:var(--navy);
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+
+.service-number {
+  color:var(--gold);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.service-card h3 {
+  font-family:'Manrope',sans-serif;
+  font-size:19px;
+  line-height:1.4;
+  margin:30px 0 12px;
+  transition:.3s;
+}
+
+.service-card p {
+  color:#7d8998;
+  font-size:13px;
+  transition:.3s;
+}
+
+.service-card:hover h3 { color:white; }
+.service-card:hover p { color:#b1bdca; }
+
+.service-card:after {
+  content:"↗";
+  position:absolute;
+  right:27px;
+  top:25px;
+  color:#b9a47e;
+  font-size:21px;
+}
+
+/* METHOD */
+
+.method {
+  padding:115px 0;
+  background:var(--navy);
+  color:white;
+}
+
+.method .section-description { color:#9ba8b7; }
+
+.method-list {
+  margin-top:55px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+}
+
+.method-item {
+  padding:35px 25px 15px 0;
+  border-right:1px solid var(--line);
+  margin-right:25px;
+}
+
+.method-item:last-child { border:0; }
+
+.method-item .number {
+  color:var(--gold);
+  font-size:13px;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.method-item h3 {
+  margin:23px 0 12px;
+  font-family:'Manrope',sans-serif;
+  font-size:18px;
+}
+
+.method-item p {
+  color:#9ba8b7;
+  font-size:13px;
+}
+
+/* DIFFERENTIAL */
+
+.differential {
+  padding:110px 0;
+  background:#ebe9e3;
+}
+
+.diff-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.diff-list { margin-top:30px; }
+
+.diff-item {
+  display:flex;
+  gap:17px;
+  padding:19px 0;
+  border-bottom:1px solid #d8d7d0;
+}
+
+.diff-icon {
+  color:#a4844e;
+  font-size:20px;
+}
+
+.diff-item h3 { font-size:15px; }
+.diff-item p {
+  color:#7b8794;
+  font-size:13px;
+}
+
+.diff-visual {
+  background:var(--navy);
+  color:white;
+  min-height:390px;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+
+.diff-visual:after {
+  content:"57";
+  font-size:220px;
+  font-family:'Manrope',sans-serif;
+  font-weight:800;
+  color:rgba(255,255,255,.04);
+  position:absolute;
+  right:-10px;
+  bottom:-65px;
+}
+
+.diff-visual strong {
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:12px;
+}
+
+.diff-visual h3 {
+  font-family:'Manrope',sans-serif;
+  font-size:31px;
+  line-height:1.3;
+  max-width:350px;
+  position:relative;
+  z-index:1;
+}
+
+/* PROJECTS */
+
+.projects {
+  padding:105px 0;
+  background:white;
+}
+
+.project-placeholder {
+  margin-top:40px;
+  border:1px dashed #c9c7be;
+  padding:45px;
+  text-align:center;
+  background:#f8f8f5;
+}
+
+.project-placeholder h3 {
+  font-family:'Manrope',sans-serif;
+  font-size:21px;
+  margin-bottom:10px;
+}
+
+.project-placeholder p {
+  color:#818b99;
+  font-size:14px;
+  max-width:550px;
+  margin:auto;
+}
+
+/* FAQ */
+
+.faq {
+  padding:110px 0;
+  background:#f0efe9;
+}
+
+.faq-grid {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+}
+
+.faq-item {
+  border-bottom:1px solid #d9d7ce;
+}
+
+.faq-question {
+  width:100%;
+  padding:22px 0;
+  border:0;
+  background:none;
+  display:flex;
+  justify-content:space-between;
+  text-align:left;
+  font-size:15px;
+  font-weight:700;
+  color:var(--ink);
+}
+
+.faq-question span:last-child {
+  color:#aa8b58;
+  font-size:21px;
+}
+
+.faq-answer {
+  display:none;
+  color:#7b8795;
+  font-size:14px;
+  padding:0 30px 22px 0;
+}
+
+.faq-item.open .faq-answer { display:block; }
+.faq-item.open .faq-question span:last-child { transform:rotate(45deg); }
+
+/* CTA */
+
+.cta {
+  padding:95px 0;
+  background:var(--navy2);
+  color:white;
+  text-align:center;
+}
+
+.cta h2 {
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(32px,4vw,48px);
+  letter-spacing:-1.5px;
+  line-height:1.2;
+  margin:20px auto;
+  max-width:750px;
+}
+
+.cta p {
+  color:#aeb8c4;
+  font-size:14px;
+  max-width:570px;
+  margin:auto;
+}
+
+/* CONTACT */
+
+.contact {
+  padding:110px 0;
+  background:var(--paper);
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+}
+
+.contact-info p {
+  color:#7b8795;
+  font-size:14px;
+  margin-top:15px;
+}
+
+.contact-form {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+
+.field { display:flex; flex-direction:column; gap:8px; }
+.field.full { grid-column:1/-1; }
+
+.field label {
+  font-size:11px;
+  font-weight:800;
+  color:#536174;
+}
+
+.field input, .field textarea {
+  border:1px solid #d9d9d2;
+  background:white;
+  padding:15px;
+  color:var(--ink);
+  outline:none;
+  font-size:14px;
+  width:100%;
+}
+
+.field input:focus, .field textarea:focus {
+  border-color:#b69a66;
+}
+
+.field textarea {
+  min-height:130px;
+  resize:vertical;
+}
+
+.form-note {
+  grid-column:1/-1;
+  color:#8792a0;
+  font-size:11px;
+}
+
+/* FOOTER */
+
+.footer {
+  background:#0b1421;
+  color:white;
+  padding:65px 0 25px;
+}
+
+.footer-top {
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:55px;
+  padding-bottom:55px;
+}
+
+.footer-description {
+  max-width:340px;
+  color:#8794a3;
+  font-size:13px;
+  margin-top:20px;
+}
+
+.footer h4 {
+  font-size:12px;
+  color:var(--gold);
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+}
+
+.footer-links {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-links a {
+  color:#a9b3c0;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.footer-links a:hover { color:var(--gold); }
+
+.footer-bottom {
+  padding-top:23px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#788596;
+  font-size:11px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+  position:fixed;
+  z-index:900;
+  right:25px;
+  bottom:25px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#238c65;
+  color:white;
+  font-size:23px;
+  text-decoration:none;
+  box-shadow:0 8px 30px rgba(0,0,0,.2);
+  transition:.2s;
+}
+
+.whatsapp:hover { transform:translateY(-5px); }
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *:before, *:after {
+    scroll-behavior:auto !important;
+    transition:none !important;
+    animation:none !important;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .nav-links {
+    position:absolute;
+    display:none;
+    top:100%;
+    left:0;
+    width:100%;
+    background:var(--navy);
+    padding:25px 6%;
+    flex-direction:column;
+    align-items:stretch;
+    gap:20px;
+    border-top:1px solid var(--line);
+  }
+
+  .nav-links.active { display:flex; }
+  .menu-toggle { display:block; }
+
+  .hero { min-height:690px; }
+  .hero h1 { letter-spacing:-2px; }
+
+  .intro-grid, .diff-grid, .faq-grid, .contact-grid {
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .principle-grid { grid-template-columns:1fr; gap:30px; }
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+  .method-list { grid-template-columns:repeat(2,1fr); }
+  .method-item:nth-child(2) { border-right:0; }
+  .method-item { margin-bottom:25px; }
+  .services-top { display:block; }
+  .footer-top { grid-template-columns:1fr 1fr; }
+  .footer-top > div:first-child { grid-column:1/-1; }
+}
+
+@media(max-width:520px) {
+  .container { width:89%; }
+  .hero { min-height:700px; }
+  .hero h1 { font-size:47px; }
+  .hero-text { font-size:14px; }
+  .services-grid, .method-list { grid-template-columns:1fr; }
+  .method-item { border-right:0; }
+  .intro-panel, .diff-visual { padding:30px; }
+  .contact-form { grid-template-columns:1fr; }
+  .field.full { grid-column:auto; }
+  .footer-top { grid-template-columns:1fr; }
+  .footer-top > div:first-child { grid-column:auto; }
+  .footer-bottom { flex-direction:column; }
+  .section-heading { font-size:34px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header" id="header">
+  <div class="container navbar">
+    <a href="#inicio" class="brand" aria-label="V57 - Início">
+      <span class="brand-name">V57</span>
+      <span class="brand-caption">Consultoria Empresarial</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">A V57</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato" class="nav-contact">Fale conosco ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="hero-grid"></div>
+
+  <div class="container hero-content reveal">
+    <span class="eyebrow">Estratégia · Gestão · Desenvolvimento</span>
+
+    <h1>
+      Empresas melhores começam com <span>decisões melhores.</span>
+    </h1>
+
+    <p class="hero-text">
+      A V57 atua ao lado de empresas para compreender seus desafios,
+      identificar oportunidades e transformar necessidades em
+      projetos e soluções concretas.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="#contato">Conheça nossa atuação <span class="arrow">↗</span></a>
+      <a class="btn btn-outline" href="#servicos">Explorar serviços</a>
+    </div>
+
+    <div class="hero-note">
+      VISÃO ESTRATÉGICA &nbsp; / &nbsp; ORGANIZAÇÃO &nbsp; / &nbsp; EXECUÇÃO
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="sobre">
+  <div class="container intro-grid">
+    <div class="intro-copy reveal">
+      <span class="eyebrow">Sobre a V57</span>
+      <h2 class="section-heading">
+        Entender o negócio é o primeiro passo para transformá-lo.
+      </h2>
+      <p>
+        Acreditamos que toda empresa possui oportunidades de evolução,
+        independentemente do seu tamanho ou segmento.
+      </p>
+      <p>
+        Nosso trabalho começa com a compreensão da realidade de cada
+        organização: seus processos, dificuldades, objetivos e
+        possibilidades. A partir dessa análise, estruturamos caminhos
+        de melhoria e projetos adequados às suas necessidades.
+      </p>
+    </div>
+
+    <div class="intro-panel reveal">
+      <div class="panel-line"></div>
+      <h3>Não oferecemos soluções prontas para problemas que ainda não entendemos.</h3>
+      <p>
+        Cada negócio exige uma análise própria. Nossa atuação parte
+        do diagnóstico e acompanha a construção de soluções aplicáveis,
+        organizadas e orientadas aos objetivos da empresa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="principles">
+  <div class="container principle-grid">
+    <div class="principle reveal">
+      <h3>Visão ampla</h3>
+      <p>Enxergamos a empresa como um conjunto de áreas, pessoas e processos conectados.</p>
+    </div>
+    <div class="principle reveal">
+      <h3>Soluções práticas</h3>
+      <p>Transformamos análises em iniciativas que possam sair do planejamento e chegar à execução.</p>
+    </div>
+    <div class="principle reveal">
+      <h3>Acompanhamento</h3>
+      <p>Organizamos projetos e acompanhamos sua evolução durante a implementação.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="services-top reveal">
+      <div>
+        <span class="eyebrow">Áreas de atuação</span>
+        <h2 class="section-heading">Soluções para os desafios do seu negócio.</h2>
+      </div>
+      <p class="section-description">
+        Nossa atuação é flexível e pode envolver diferentes áreas
+        de acordo com as necessidades identificadas em cada empresa.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="service-number">01 / GESTÃO</span>
+        <h3>Gestão de projetos</h3>
+        <p>Estruturação, planejamento, organização e acompanhamento de projetos empresariais.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-number">02 / OPERAÇÕES</span>
+        <h3>Processos e organização</h3>
+        <p>Análise de rotinas, identificação de gargalos e melhoria dos processos internos.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-number">03 / ESTRATÉGIA</span>
+        <h3>Estratégia empresarial</h3>
+        <p>Compreensão dos desafios do negócio e estruturação de iniciativas de desenvolvimento.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-number">04 / COMERCIAL</span>
+        <h3>Vendas e desenvolvimento comercial</h3>
+        <p>Organização comercial, análise de oportunidades e melhoria da estrutura de vendas.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-number">05 / TECNOLOGIA</span>
+        <h3>Sistemas e tecnologia</h3>
+        <p>Identificação de necessidades tecnológicas e oportunidades de melhoria por meio de sistemas.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-number">06 / COMUNICAÇÃO</span>
+        <h3>Marketing e posicionamento</h3>
+        <p>Organização da comunicação, posicionamento de mercado e presença empresarial.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="metodologia">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2 class="section-heading">Da identificação do problema à implementação da solução.</h2>
+      <p class="section-description">
+        Um processo estruturado, adaptável à realidade e à complexidade de cada empresa.
+      </p>
+    </div>
+
+    <div class="method-list">
+      <div class="method-item reveal">
+        <span class="number">ETAPA 01</span>
+        <h3>Diagnóstico</h3>
+        <p>Conhecemos a operação, ouvimos as pessoas envolvidas e compreendemos os desafios.</p>
+      </div>
+
+      <div class="method-item reveal">
+        <span class="number">ETAPA 02</span>
+        <h3>Análise</h3>
+        <p>Identificamos causas, gargalos, riscos e oportunidades de melhoria.</p>
+      </div>
+
+      <div class="method-item reveal">
+        <span class="number">ETAPA 03</span>
+        <h3>Planejamento</h3>
+        <p>Definimos prioridades, soluções, responsabilidades e etapas de execução.</p>
+      </div>
+
+      <div class="method-item reveal">
+        <span class="number">ETAPA 04</span>
+        <h3>Implementação</h3>
+        <p>Acompanhamos o desenvolvimento das iniciativas e sua evolução.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="differential">
+  <div class="container diff-grid">
+    <div class="reveal">
+      <span class="eyebrow">Nossa abordagem</span>
+      <h2 class="section-heading">Cada empresa tem uma realidade. Cada solução deve respeitá-la.</h2>
+      <p class="section-description">
+        Não partimos de um modelo único. Buscamos compreender o contexto
+        antes de recomendar mudanças.
+      </p>
+
+      <div class="diff-list">
+        <div class="diff-item">
+          <span class="diff-icon">01</span>
+          <div>
+            <h3>Compreensão do contexto</h3>
+            <p>Conhecer a empresa antes de propor mudanças.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-icon">02</span>
+          <div>
+            <h3>Priorização inteligente</h3>
+            <p>Concentrar esforços nos desafios mais relevantes.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-icon">03</span>
+          <div>
+            <h3>Execução organizada</h3>
+            <p>Transformar planejamento em iniciativas acompanháveis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="diff-visual reveal">
+      <strong>V57 / NOSSA PERSPECTIVA</strong>
+      <h3>Estratégia sem execução é apenas intenção. Execução sem estratégia é esforço sem direção.</h3>
+      <span class="eyebrow">Pensar · Planejar · Fazer evoluir</span>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projetos">
+  <div class="container reveal">
+    <span class="eyebrow">Projetos e experiências</span>
+    <h2 class="section-heading">Soluções construídas a partir de desafios reais.</h2>
+    <p class="section-description">
+      Esta área será utilizada para apresentar projetos, estudos de caso
+      e iniciativas desenvolvidas pela V57.
+    </p>
+
+    <div class="project-placeholder">
+      <h3>Nosso portfólio está em construção.</h3>
+      <p>
+        Em breve, apresentaremos aqui exemplos de desafios empresariais,
+        abordagens utilizadas e soluções desenvolvidas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container faq-grid">
+    <div class="reveal">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 class="section-heading">Vamos esclarecer alguns pontos.</h2>
+      <p class="section-description">
+        Entenda melhor como funciona a atuação da V57.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          A V57 atende empresas de quais segmentos?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          A proposta da V57 é atuar com empresas de diferentes segmentos,
+          compreendendo as particularidades de cada negócio antes de
+          estruturar qualquer iniciativa.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Como começa um trabalho com a V57?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          O primeiro passo é uma conversa para compreender a empresa,
+          suas necessidades e os desafios que deseja resolver.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          A V57 também acompanha a execução dos projetos?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Sim. A proposta de atuação contempla planejamento,
+          organização e acompanhamento da implementação,
+          conforme o escopo acordado.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          É possível contratar um serviço específico?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          A atuação pode ser estruturada de acordo com a necessidade
+          da empresa, desde uma demanda específica até um projeto
+          mais amplo de melhoria.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container reveal">
+    <span class="eyebrow">O próximo passo começa aqui</span>
+    <h2>Existe uma maneira melhor de fazer. Vamos encontrá-la?</h2>
+    <p>
+      Apresente seu desafio. Vamos entender o cenário e conversar
+      sobre possibilidades de evolução para sua empresa.
+    </p>
+    <a class="btn" href="#contato" style="margin-top:30px">
+      Converse com a V57 ↗
+    </a>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contato</span>
+      <h2 class="section-heading">Vamos conversar sobre o seu negócio?</h2>
+      <p>
+        Preencha as informações ao lado e conte um pouco sobre
+        sua empresa e o que gostaria de melhorar.
+      </p>
+      <p>
+        Sua mensagem será preparada para envio por e-mail.
+      </p>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="field">
+        <label for="name">SEU NOME</label>
+        <input id="name" name="name" required maxlength="100"
+          placeholder="Como podemos chamar você?">
+      </div>
+
+      <div class="field">
+        <label for="company">EMPRESA</label>
+        <input id="company" name="company" maxlength="120"
+          placeholder="Nome da empresa">
+      </div>
+
+      <div class="field">
+        <label for="email">SEU E-MAIL</label>
+        <input id="email" name="email" type="email" required
+          placeholder="voce@empresa.com">
+      </div>
+
+      <div class="field">
+        <label for="phone">TELEFONE</label>
+        <input id="phone" name="phone" type="tel"
+          placeholder="(00) 00000-0000">
+      </div>
+
+      <div class="field full">
+        <label for="subject">COMO PODEMOS AJUDAR?</label>
+        <textarea id="subject" name="subject" required
+          maxlength="3000"
+          placeholder="Conte um pouco sobre seu desafio ou objetivo..."></textarea>
+      </div>
+
+      <p class="form-note">
+        Ao clicar, seu aplicativo de e-mail será aberto com a mensagem preparada.
+      </p>
+
+      <div class="field full">
+        <button class="btn" type="submit">Preparar mensagem ↗</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#inicio" class="brand">
+          <span class="brand-name">V57</span>
+          <span class="brand-caption">Consultoria Empresarial</span>
+        </a>
+        <p class="footer-description">
+          Estratégia, organização e gestão de projetos para empresas
+          que buscam compreender seus desafios e evoluir.
+        </p>
+      </div>
+
+      <div>
+        <h4>NAVEGAÇÃO</h4>
+        <div class="footer-links">
+          <a href="#sobre">Sobre a V57</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#metodologia">Metodologia</a>
+          <a href="#projetos">Projetos</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>CONTATO</h4>
+        <div class="footer-links">
+          <a href="#contato">Entre em contato</a>
+          <a href="#contato">Solicite uma conversa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> V57. Todos os direitos reservados.</span>
+      <span>Consultoria e Gestão Empresarial</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" id="whatsappLink"
+  href="#contato" aria-label="Entre em contato pelo WhatsApp">✆</a>
+
+<script>
+/* =====================================
+   CONFIGURAÇÕES DA V57
+   Altere os dados abaixo quando quiser.
+===================================== */
+
+const V57 = {
+  email: "SEUEMAIL@EXEMPLO.COM",
+  whatsapp: ""
+  // Coloque o WhatsApp com código do país e DDD.
+  // Exemplo: 5511999999999
+};
+
+/* CABEÇALHO */
+
+const header = document.getElementById("header");
+
+function updateHeader() {
+  header.classList.toggle("scrolled", window.scrollY > 30);
+}
+
+window.addEventListener("scroll", updateHeader, {passive:true});
+updateHeader();
+
+/* MENU MOBILE */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("active");
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.textContent = open ? "×" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded","false");
+  });
+});
+
+/* ANIMAÇÕES DE ENTRADA */
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
+});
+
+/* PERGUNTAS FREQUENTES */
+
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".faq-item");
+    const wasOpen = item.classList.contains("open");
+
+    document.querySelectorAll(".faq-item").forEach(other => {
+      other.classList.remove("open");
+      other.querySelector(".faq-question").setAttribute("aria-expanded","false");
+    });
+
+    if (!wasOpen) {
+      item.classList.add("open");
+      button.setAttribute("aria-expanded","true");
+    }
+  });
+});
+
+/* FORMULÁRIO DE CONTATO */
+
+document.getElementById("contactForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  if (V57.email === "SEUEMAIL@EXEMPLO.COM") {
+    alert("O formulário está funcionando, mas precisamos configurar o e-mail comercial da V57 no código.");
+    return;
+  }
+
+  const data = new FormData(form);
+
+  const name = data.get("name");
+  const company = data.get("company") || "Não informado";
+  const email = data.get("email");
+  const phone = data.get("phone") || "Não informado";
+  const message = data.get("subject");
+
+  const subject = encodeURIComponent("Novo contato pelo site V57");
+  const body = encodeURIComponent(
+`Olá, equipe V57!
+
+Nome: ${name}
+Empresa: ${company}
+E-mail: ${email}
+Telefone: ${phone}
+
+Mensagem:
+${message}`
+  );
+
+  window.location.href =
+    `mailto:${V57.email}?subject=${subject}&body=${body}`;
+});
+
+/* WHATSAPP */
+
+const whatsappLink = document.getElementById("whatsappLink");
+
+if (V57.whatsapp) {
+  whatsappLink.href = "https://wa.me/" + V57.whatsapp;
+  whatsappLink.target = "_blank";
+  whatsappLink.rel = "noopener noreferrer";
+} else {
+  whatsappLink.addEventListener("click", event => {
+    event.preventDefault();
+    document.getElementById("contato").scrollIntoView({
+      behavior:"smooth"
+    });
+  });
+}
+
+/* ANO AUTOMÁTICO */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
